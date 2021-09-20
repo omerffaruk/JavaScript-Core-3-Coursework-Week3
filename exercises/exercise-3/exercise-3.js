@@ -6,3 +6,17 @@ let order = [
   { itemName: "Hot Coffee", quantity: 2, unitPrice: 1.0 },
   { itemName: "Hash Brown", quantity: 4, unitPrice: 0.4 },
 ];
+
+let total = 0;
+
+order.forEach((order) => {
+  const {quantity, itemName} = order;
+  const itemTotal = order.unitPrice * order.quantity;
+  total += itemTotal;
+  console.log(quantity, itemName, itemTotal);
+})
+
+console.log(total);
+
+
+
