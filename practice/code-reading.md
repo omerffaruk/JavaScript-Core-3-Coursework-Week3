@@ -16,6 +16,8 @@ Take a look at the following code:
 
 Explain why line 4 and line 6 output different numbers.
 
+Because their scope is different. Line 4 will log the x value in the function scope, line 6 will log the x value in global scope.
+
 ## Question 2
 
 Take a look at the following code:
@@ -34,6 +36,8 @@ console.log(y)
 ```
 
 What will be the output of this code. Explain your answer in 50 words or less.
+console.log(y) will throw referenceError 'y' is not defined because the code cannot access it
+console.log(f1()) will log 10 
 
 ## Question 3
 
@@ -62,3 +66,5 @@ console.log(y);
 ```
 
 What will be the output of this code. Explain your answer in 50 words or less.
+f1(x) will return 10; console.log(x) will log 9
+f2(y) will return { x : 10}; console.log(y) will log { x : 10} - the second function will mutate the object
