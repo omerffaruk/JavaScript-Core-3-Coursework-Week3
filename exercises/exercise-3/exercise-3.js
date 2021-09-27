@@ -7,16 +7,25 @@ let order = [
   { itemName: "Hash Brown", quantity: 4, unitPrice: 0.4 },
 ];
 
-let total = 0;
 
-order.forEach((order) => {
-  const {quantity, itemName} = order;
-  const itemTotal = order.unitPrice * order.quantity;
-  total += itemTotal;
-  console.log(quantity, itemName, itemTotal);
-})
+function printOrdersAndTotal (order) {
 
-console.log(total);
+  console.log("QTY       ITEM                     TOTAL")
+  let total = 0;
+
+  order.forEach(({ itemName, quantity, unitPrice }) => {
+    const itemTotal = quantity * unitPrice;
+    total += itemTotal;
+    console.log(
+      `${(quantity + "").padEnd(10)}${(itemName + "").padEnd(25)}${itemTotal}`
+    );
+  });
+
+  console.log(`Total: ${total}`);
+}
+
+printOrdersAndTotal(order);
+
 
 
 
